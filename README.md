@@ -46,7 +46,22 @@ docker run -d -p 5555:5555 \
   --name isolated-server \
   isolated-server:1.0
 ```
+
 ---
+
+##### Running the isolated server with mainnet persistence
+You are able to load isolated server with a copy of the mainnet persistence for investigation/post mortem purpose. The steps are similar to Running isolated server with persistence However, there's an additional environment variable that you will require: `$MAINNET_PERSISTENCE_LOAD`
+
+Extract the mainnet persistence tar.gz file onto the isolated server directory, then run the following command:
+```
+docker run -d -p 5555:5555 \
+  --env $MAINNET_PERSISTENCE_LOAD="true"
+  --name isolated-server \
+  isolated-server:1.0
+```
+
+---
+
 ##### Running the isolated server with manual block increase
 Enabling manual mode can be done by the following command.
 
