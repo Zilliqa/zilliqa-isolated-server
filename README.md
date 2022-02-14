@@ -55,6 +55,7 @@ You are able to load isolated server with a copy of the mainnet persistence for 
 Extract the mainnet persistence tar.gz file onto the isolated server directory, then run the following command:
 ```
 docker run -d -p 5555:5555 \
+  -v $(pwd)/persistence:/zilliqa/persistence \
   --env $MAINNET_PERSISTENCE_LOAD="true"
   --name isolated-server \
   isolated-server:1.0
