@@ -16,8 +16,8 @@
         <NUM_EPOCHS_PER_PERSISTENT_DB>250000</NUM_EPOCHS_PER_PERSISTENT_DB>
         <KEEP_HISTORICAL_STATE>true</KEEP_HISTORICAL_STATE>
         <NUM_DS_EPOCHS_STATE_HISTORY>200</NUM_DS_EPOCHS_STATE_HISTORY>
+        <ENABLE_MEMORY_STATS>false</ENABLE_MEMORY_STATS>
         <INIT_TRIE_DB_SNAPSHOT_EPOCH>0</INIT_TRIE_DB_SNAPSHOT_EPOCH>
-	<ENABLE_MEMORY_STATS>false</ENABLE_MEMORY_STATS>
 	<DSCOMM_SNAPSHOT_INTERVAL>100</DSCOMM_SNAPSHOT_INTERVAL>
     </general>
     <version>
@@ -339,7 +339,6 @@
         <REPOPULATE_STATE_PER_N_DS>10</REPOPULATE_STATE_PER_N_DS>
         <NUM_STORE_TX_BODIES_INTERVAL>5</NUM_STORE_TX_BODIES_INTERVAL>
         <PRIMARY_BUCKET_NAME>xxxxxxxxxxx</PRIMARY_BUCKET_NAME>
-        <BUCKET_NAME>xxxxxxxxxxx</BUCKET_NAME>
         <TXN_PERSISTENCE_NAME>txnsbackup</TXN_PERSISTENCE_NAME>
         <ENABLE_TXNS_BACKUP>false</ENABLE_TXNS_BACKUP>
         <SHARDLDR_SAVE_TXN_LOCALLY>false</SHARDLDR_SAVE_TXN_LOCALLY>
@@ -399,6 +398,14 @@
             <wallet_address>ee06b3c906612cc5bdb087a30e6093c9f0aa04fd</wallet_address>
         </account>
     </ds_accounts>
+    <node_discovery>	
+        <QUERY_DNS_FOR_SEED>true</QUERY_DNS_FOR_SEED>	
+        <QUERY_DNS_MAX_TRIES>5</QUERY_DNS_MAX_TRIES>	
+        <l2l_data_providers_dns/>	
+        <upper_seed_dns/>	
+        <multiplier_dns/>	
+        <default_seed_port>33133</default_seed_port>	
+    </node_discovery>
     <!-- The remaining constants below are auto-populated -->
     <lookups>
         <!--IP to be provided after public testnet launch.

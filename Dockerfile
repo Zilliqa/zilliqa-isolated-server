@@ -1,5 +1,5 @@
 #FROM 648273915458.dkr.ecr.us-west-2.amazonaws.com/zilliqa:7186a35
-FROM zilliqa/zilliq:v8.2.0
+FROM zilliqa/zilliqa:v8.2.0-alpha.0
 ARG SOURCE_DIR=/zilliqa
 
 WORKDIR ${SOURCE_DIR}
