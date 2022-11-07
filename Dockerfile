@@ -1,5 +1,5 @@
-#FROM 648273915458.dkr.ecr.us-west-2.amazonaws.com/zilliqa:7186a35
-FROM zilliqa/zilliqa:v8.2.0rc2
+# TODO: Update to public `zilliqa/zilliqa` base image.
+FROM 648273915458.dkr.ecr.us-west-2.amazonaws.com/zilliqa:2ace9cc
 ARG SOURCE_DIR=/zilliqa
 
 WORKDIR ${SOURCE_DIR}
