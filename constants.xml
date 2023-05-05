@@ -347,6 +347,7 @@
         <TXN_DISPATCH_ATTEMPT_LIMIT>3</TXN_DISPATCH_ATTEMPT_LIMIT>
     </transactions>
     <verifier>
+        <microblock_exclusion_list></microblock_exclusion_list>
         <exclusion_list>
 	</exclusion_list>
 	<IGNORE_BLOCKCOSIG_CHECK>true</IGNORE_BLOCKCOSIG_CHECK>
