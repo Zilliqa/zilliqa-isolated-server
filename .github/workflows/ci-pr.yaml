@@ -21,10 +21,10 @@ jobs:
         docker system prune -a -f --filter "until=168h"
         docker system df
 
-    - name: 'Checkout scm ${{ inputs.commitOrTag }}'
+    - name: 'Checkout scm'
       uses: actions/checkout@v3
       with:
-        ref: ${{ inputs.commitOrTag }}
+        ref: ${{ github.event.pull_request.head.sha }}
 
     - name: Configure AWS Credentials
       uses: Zilliqa/gh-actions-workflows/actions/configure-aws-credentials@v1

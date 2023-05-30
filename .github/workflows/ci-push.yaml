@@ -9,7 +9,7 @@ on:
         default: ''
   push:
     branches:
-    - master
+    - devops-714
     tags:
       - v*
 
