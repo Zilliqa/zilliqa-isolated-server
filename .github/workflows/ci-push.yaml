@@ -1,4 +1,4 @@
-name: Zilliqa Isolated Server CI
+name: Zilliqa Isolated Server CI - Push to main
 
 on:
   workflow_dispatch:
