@@ -9,7 +9,7 @@ on:
         default: ''
   push:
     branches:
-    - devops-714
+    - master
     tags:
       - v*
 
@@ -56,6 +56,12 @@ jobs:
       run: DOCKER_BUILDKIT=1 docker build -t ${{ secrets.AWS_ACCOUNT_ID_NEO_SAVANT_IDE }}.dkr.ecr.${{ secrets.AWS_REGION_NEO_SAVANT_IDE }}.amazonaws.com/zilliqa-isolated-server:${{ steps.set-tag.outputs.tag }} -f Dockerfile .
       shell: bash
 
-    - name: Push Docker images
+    - name: Push Docker images (commit or tag)
       run: docker push ${{ secrets.AWS_ACCOUNT_ID_NEO_SAVANT_IDE }}.dkr.ecr.${{ secrets.AWS_REGION_NEO_SAVANT_IDE }}.amazonaws.com/zilliqa-isolated-server:${{ steps.set-tag.outputs.tag }}
+      shell: bash
+
+    - name: Push Docker images (latest)
+      run: |
+        docker tag ${{ secrets.AWS_ACCOUNT_ID_NEO_SAVANT_IDE }}.dkr.ecr.${{ secrets.AWS_REGION_NEO_SAVANT_IDE }}.amazonaws.com/zilliqa-isolated-server:${{ steps.set-tag.outputs.tag }} ${{ secrets.AWS_ACCOUNT_ID_NEO_SAVANT_IDE }}.dkr.ecr.${{ secrets.AWS_REGION_NEO_SAVANT_IDE }}.amazonaws.com/zilliqa-isolated-server:latest
+        docker push ${{ secrets.AWS_ACCOUNT_ID_NEO_SAVANT_IDE }}.dkr.ecr.${{ secrets.AWS_REGION_NEO_SAVANT_IDE }}.amazonaws.com/zilliqa-isolated-server:latest
       shell: bash
